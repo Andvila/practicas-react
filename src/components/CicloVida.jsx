@@ -13,6 +13,12 @@ export default class CicloVida extends Component {
         this.temporizador = null;
     }
 
+    /* Cuando se hacen peticiones a API se recomienda hacerlo desde este metodo ya que en el
+    render el componente aun no se encuentra en el DOM */
+    componentDidMount() {
+        console.log(1, "El componente ya se encuentra en el DOM");
+    }
+
     tictac = () => this.temporizador = setInterval(
             () => this.setState({
                 hora: new Date().toLocaleTimeString()
